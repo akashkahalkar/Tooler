@@ -13,5 +13,10 @@ struct ToolerApp: App {
         WindowGroup {
             ContentView()
         }
+        
+        Settings {
+            SettingsView()
+                .frame(minWidth: 300, minHeight: 300)
+        }
     }
 }
