@@ -11,6 +11,12 @@
 		4C2A64312B3A9D6D008F310A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A64302B3A9D6D008F310A /* ContentView.swift */; };
 		4C2A64332B3A9D6F008F310A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C2A64322B3A9D6F008F310A /* Assets.xcassets */; };
 		4C2A64362B3A9D6F008F310A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C2A64352B3A9D6F008F310A /* Preview Assets.xcassets */; };
+		4C2A643E2B3A9EA1008F310A /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A643D2B3A9EA1008F310A /* SidebarView.swift */; };
+		4C2A64432B3A9EDB008F310A /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A64422B3A9EDB008F310A /* DetailsView.swift */; };
+		4C2A64452B3AA1C7008F310A /* SelectionStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A64442B3AA1C7008F310A /* SelectionStateManager.swift */; };
+		4C2A64472B3AA370008F310A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A64462B3AA370008F310A /* SettingsView.swift */; };
+		4C2A644A2B3AA3CD008F310A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A64492B3AA3CD008F310A /* DataManager.swift */; };
+		4C2A644C2B3AA41B008F310A /* NavigationStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A644B2B3AA41B008F310A /* NavigationStateManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +26,12 @@
 		4C2A64322B3A9D6F008F310A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C2A64352B3A9D6F008F310A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4C2A64372B3A9D6F008F310A /* Tooler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tooler.entitlements; sourceTree = "<group>"; };
+		4C2A643D2B3A9EA1008F310A /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		4C2A64422B3A9EDB008F310A /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		4C2A64442B3AA1C7008F310A /* SelectionStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionStateManager.swift; sourceTree = "<group>"; };
+		4C2A64462B3AA370008F310A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4C2A64492B3AA3CD008F310A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		4C2A644B2B3AA41B008F310A /* NavigationStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStateManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +64,9 @@
 		4C2A642D2B3A9D6D008F310A /* Tooler */ = {
 			isa = PBXGroup;
 			children = (
+				4C2A64482B3AA394008F310A /* Managers */,
+				4C2A643F2B3A9EAE008F310A /* Views */,
 				4C2A642E2B3A9D6D008F310A /* ToolerApp.swift */,
-				4C2A64302B3A9D6D008F310A /* ContentView.swift */,
 				4C2A64322B3A9D6F008F310A /* Assets.xcassets */,
 				4C2A64372B3A9D6F008F310A /* Tooler.entitlements */,
 				4C2A64342B3A9D6F008F310A /* Preview Content */,
@@ -67,6 +80,27 @@
 				4C2A64352B3A9D6F008F310A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4C2A643F2B3A9EAE008F310A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C2A64302B3A9D6D008F310A /* ContentView.swift */,
+				4C2A643D2B3A9EA1008F310A /* SidebarView.swift */,
+				4C2A64422B3A9EDB008F310A /* DetailsView.swift */,
+				4C2A64462B3AA370008F310A /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4C2A64482B3AA394008F310A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4C2A64492B3AA3CD008F310A /* DataManager.swift */,
+				4C2A64442B3AA1C7008F310A /* SelectionStateManager.swift */,
+				4C2A644B2B3AA41B008F310A /* NavigationStateManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +174,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C2A64312B3A9D6D008F310A /* ContentView.swift in Sources */,
+				4C2A64432B3A9EDB008F310A /* DetailsView.swift in Sources */,
+				4C2A64452B3AA1C7008F310A /* SelectionStateManager.swift in Sources */,
+				4C2A644C2B3AA41B008F310A /* NavigationStateManager.swift in Sources */,
+				4C2A64472B3AA370008F310A /* SettingsView.swift in Sources */,
+				4C2A644A2B3AA3CD008F310A /* DataManager.swift in Sources */,
 				4C2A642F2B3A9D6D008F310A /* ToolerApp.swift in Sources */,
+				4C2A643E2B3A9EA1008F310A /* SidebarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +310,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Tooler/Tooler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -279,12 +320,14 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Tooler;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.akashkahalkar.tooler.Tooler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -297,6 +340,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Tooler/Tooler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -306,12 +350,14 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Tooler;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.akashkahalkar.tooler.Tooler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
