@@ -10,19 +10,19 @@ import SwiftUI
 struct DetailsView: View {
     
     @EnvironmentObject var stateManager: NavigationStateManager
+    @EnvironmentObject var dataManager: DataManager
     
     var body: some View {
-        switch stateManager.selectionState {
-        case .AppSection(let app):
-            Text("Show app \(app.name)")
-        case .Settings:
-            SettingsView()
-        case .none:
-            Text("No Selection")
+        if case let .Section(name) = $stateManager.selectedContenItem.wrappedValue {
+            Text(name)
+        } else {
+            Text("EmptyView")
         }
     }
 }
 
 #Preview {
-    DetailsView().environmentObject(NavigationStateManager())
+    DetailsView()
+        .environmentObject(NavigationStateManager())
+        .environmentObject(DataManager())
 }

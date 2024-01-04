@@ -10,26 +10,26 @@ import SwiftUI
 struct SidebarView: View {
     
     @EnvironmentObject var stateManager: NavigationStateManager
+    @EnvironmentObject var dataManager: DataManager
     
     var body: some View {
-        List(selection: $stateManager.selectionState) {
-            Section("Apps") {
-                Text("App 1")
-                    .tag(SelectionState.AppSection(
-                        CommandLineApp(name: "App 1"))
-                    )
-                Text("App 2")
-                    .tag(SelectionState.AppSection(
-                        CommandLineApp(name: "App 2"))
-                    )
+        ZStack {
+            Color.sacroBosco
+            List(selection: $stateManager.selectedSideBarItem) {
+                Section("Apps") {
+                    ForEach(dataManager.apps, id: \.id) { app in
+                        Text(app.title)
+                            .tag(SelectionState.Section(app.title))
+                            .padding()
+                    }
+                }
             }
-            Text("Settings")
-                .tag(SelectionState.Settings)
-        }
+        }.foregroundColor(Color.sweetVenom)
     }
 }
 
 #Preview {
     SidebarView()
         .environmentObject(NavigationStateManager())
+        .environmentObject(DataManager())
 }
