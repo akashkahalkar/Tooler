@@ -6,19 +6,30 @@
 //
 
 import Foundation
-
-struct CommandLineApp: Hashable, Codable {
-    var name: String
-}
+import SwiftUI
 
 enum SelectionState: Hashable, Codable {
-    case AppSection(CommandLineApp)
-    case Settings
+    case Section(String)
 }
 
 class NavigationStateManager: ObservableObject {
+    @Published var selectedSideBarItem: SelectionState? = nil
+    @Published var selectedContenItem: SelectionState? = nil
+    @Published var activeContentModel: ContentModel? = nil
     
-    @Published var selectionState: SelectionState? = nil
+    func updateSideBar(sectionName: String) {
+        if case let .Section(name) = selectedSideBarItem,
+           name != sectionName,
+           selectedContenItem != nil {
+            selectedContenItem = nil
+        }
+        selectedSideBarItem = SelectionState.Section(sectionName)
+    }
     
-    
+    func updateContenList(contentModel: ContentModel) {
+        DispatchQueue.main.async {
+            self.activeContentModel = contentModel
+            self.selectedContenItem = SelectionState.Section(contentModel.title)
+        }
+    }
 }
