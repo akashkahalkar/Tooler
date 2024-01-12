@@ -11,6 +11,7 @@ import SwiftUI
 final class BrewApp: CommandLineApp {
     var id: String = UUID().uuidString
     var title: String = "Brew"
+    var baseCommand = "brew"
     var viewModel: BrewManagerViewModel
     
     public static let shared = BrewApp()

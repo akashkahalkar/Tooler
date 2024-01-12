@@ -59,22 +59,31 @@ struct ContentView: View {
     }
 
     private func getSideBarItemListView(_ sectionName: String) -> some View {
-        return Text(sectionName)
-            .tag(SelectionState.Section(sectionName))
-            .padding()
-            .onTapGesture {
-                stateManager.updateSideBar(sectionName: sectionName)
-            }
+        
+        return Button {
+            stateManager.updateSideBar(sectionName: sectionName)
+        } label: {
+            Text(sectionName)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
+                .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .tag(SelectionState.Section(sectionName))
     }
     
     private func getContentItemListView(contentModel: ContentModel) -> some View {
+                
         return Button {
             stateManager.updateContenList(contentModel: contentModel)
         } label: {
             Text(contentModel.title)
-                .padding()
                 .frame(maxWidth: .infinity, alignment: .leading)
-        }.tag(SelectionState.Section(contentModel.title))
+                .padding()
+                .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .tag(SelectionState.Section(contentModel.title))
     }
 }
 

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,23 +11,26 @@
 		4C2A64312B3A9D6D008F310A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A64302B3A9D6D008F310A /* ContentView.swift */; };
 		4C2A64332B3A9D6F008F310A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C2A64322B3A9D6F008F310A /* Assets.xcassets */; };
 		4C2A64362B3A9D6F008F310A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C2A64352B3A9D6F008F310A /* Preview Assets.xcassets */; };
-		4C2A643E2B3A9EA1008F310A /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A643D2B3A9EA1008F310A /* SidebarView.swift */; };
-		4C2A64432B3A9EDB008F310A /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A64422B3A9EDB008F310A /* DetailsView.swift */; };
 		4C2A64472B3AA370008F310A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A64462B3AA370008F310A /* SettingsView.swift */; };
 		4C2A644A2B3AA3CD008F310A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A64492B3AA3CD008F310A /* DataManager.swift */; };
 		4C2A644C2B3AA41B008F310A /* NavigationStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A644B2B3AA41B008F310A /* NavigationStateManager.swift */; };
 		4C7811732B491DFD00E1D644 /* DownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7811722B491DFD00E1D644 /* DownloadView.swift */; };
+		4C7811772B49278600E1D644 /* YTDLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7811762B49278600E1D644 /* YTDLApp.swift */; };
+		4CAB28E82B4C31D000BDC01E /* ytDownloaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAB28E72B4C31D000BDC01E /* ytDownloaderViewModel.swift */; };
+		4CAB28EB2B4C66A100BDC01E /* InstaDownloaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAB28EA2B4C66A100BDC01E /* InstaDownloaderApp.swift */; };
+		4CAB28ED2B4C676C00BDC01E /* InstaLoaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAB28EC2B4C676C00BDC01E /* InstaLoaderViewModel.swift */; };
+		4CAB28EF2B4C720800BDC01E /* InstaDownloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAB28EE2B4C720800BDC01E /* InstaDownloaderView.swift */; };
 		4CC7B2012B3BE73E0010A638 /* ShellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7B2002B3BE73E0010A638 /* ShellController.swift */; };
 		4CC7B2062B3BFBC90010A638 /* BrewManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7B2052B3BFBC90010A638 /* BrewManagerView.swift */; };
 		4CC7B2082B3BFBDE0010A638 /* BrewManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7B2072B3BFBDE0010A638 /* BrewManagerViewModel.swift */; };
+		4CD164672B4D645500B12E31 /* FolderSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD164662B4D645500B12E31 /* FolderSelectionView.swift */; };
 		4CD1DB722B45A06D00487639 /* ScratchPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD1DB712B45A06C00487639 /* ScratchPad.swift */; };
 		4CD1DB742B46772D00487639 /* BrewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD1DB732B46772D00487639 /* BrewApp.swift */; };
 		4CD1DB762B467D6000487639 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD1DB752B467D6000487639 /* Constants.swift */; };
+		4CE011C02B5122EF0084A391 /* SwiftElixir in Frameworks */ = {isa = PBXBuildFile; productRef = 4CE011BF2B5122EF0084A391 /* SwiftElixir */; };
 		4CF0AC4E2B3C7B370024E8A4 /* BrewPackageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF0AC4D2B3C7B370024E8A4 /* BrewPackageList.swift */; };
 		4CF0AC512B4055BF0024E8A4 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF0AC502B4055BF0024E8A4 /* UIColor+Ext.swift */; };
 		4CF0AC542B4055E20024E8A4 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF0AC532B4055E20024E8A4 /* ColorConstants.swift */; };
-		4CF0AC562B4069A90024E8A4 /* MiddleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF0AC552B4069A90024E8A4 /* MiddleView.swift */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,22 +40,25 @@
 		4C2A64322B3A9D6F008F310A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C2A64352B3A9D6F008F310A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4C2A64372B3A9D6F008F310A /* Tooler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tooler.entitlements; sourceTree = "<group>"; };
-		4C2A643D2B3A9EA1008F310A /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
-		4C2A64422B3A9EDB008F310A /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		4C2A64462B3AA370008F310A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4C2A64492B3AA3CD008F310A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		4C2A644B2B3AA41B008F310A /* NavigationStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStateManager.swift; sourceTree = "<group>"; };
 		4C7811722B491DFD00E1D644 /* DownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadView.swift; sourceTree = "<group>"; };
+		4C7811762B49278600E1D644 /* YTDLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTDLApp.swift; sourceTree = "<group>"; };
+		4CAB28E72B4C31D000BDC01E /* ytDownloaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ytDownloaderViewModel.swift; sourceTree = "<group>"; };
+		4CAB28EA2B4C66A100BDC01E /* InstaDownloaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaDownloaderApp.swift; sourceTree = "<group>"; };
+		4CAB28EC2B4C676C00BDC01E /* InstaLoaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaLoaderViewModel.swift; sourceTree = "<group>"; };
+		4CAB28EE2B4C720800BDC01E /* InstaDownloaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaDownloaderView.swift; sourceTree = "<group>"; };
 		4CC7B2002B3BE73E0010A638 /* ShellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellController.swift; sourceTree = "<group>"; };
 		4CC7B2052B3BFBC90010A638 /* BrewManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewManagerView.swift; sourceTree = "<group>"; };
 		4CC7B2072B3BFBDE0010A638 /* BrewManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewManagerViewModel.swift; sourceTree = "<group>"; };
+		4CD164662B4D645500B12E31 /* FolderSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSelectionView.swift; sourceTree = "<group>"; };
 		4CD1DB712B45A06C00487639 /* ScratchPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchPad.swift; sourceTree = "<group>"; };
 		4CD1DB732B46772D00487639 /* BrewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewApp.swift; sourceTree = "<group>"; };
 		4CD1DB752B467D6000487639 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4CF0AC4D2B3C7B370024E8A4 /* BrewPackageList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewPackageList.swift; sourceTree = "<group>"; };
 		4CF0AC502B4055BF0024E8A4 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		4CF0AC532B4055E20024E8A4 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
-		4CF0AC552B4069A90024E8A4 /* MiddleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CE011C02B5122EF0084A391 /* SwiftElixir in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,10 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				4C2A64302B3A9D6D008F310A /* ContentView.swift */,
-				4C2A643D2B3A9EA1008F310A /* SidebarView.swift */,
-				4CF0AC552B4069A90024E8A4 /* MiddleView.swift */,
-				4C2A64422B3A9EDB008F310A /* DetailsView.swift */,
 				4C2A64462B3AA370008F310A /* SettingsView.swift */,
+				4CD164662B4D645500B12E31 /* FolderSelectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -133,8 +138,20 @@
 			isa = PBXGroup;
 			children = (
 				4C7811722B491DFD00E1D644 /* DownloadView.swift */,
+				4C7811762B49278600E1D644 /* YTDLApp.swift */,
+				4CAB28E72B4C31D000BDC01E /* ytDownloaderViewModel.swift */,
 			);
 			path = "yt-downloader";
+			sourceTree = "<group>";
+		};
+		4CAB28E92B4C668700BDC01E /* InstagramDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				4CAB28EA2B4C66A100BDC01E /* InstaDownloaderApp.swift */,
+				4CAB28EC2B4C676C00BDC01E /* InstaLoaderViewModel.swift */,
+				4CAB28EE2B4C720800BDC01E /* InstaDownloaderView.swift */,
+			);
+			path = InstagramDownloader;
 			sourceTree = "<group>";
 		};
 		4CC7B2022B3BEBD50010A638 /* Controller */ = {
@@ -148,6 +165,7 @@
 		4CC7B2032B3BFB960010A638 /* CommandLineApp */ = {
 			isa = PBXGroup;
 			children = (
+				4CAB28E92B4C668700BDC01E /* InstagramDownloader */,
 				4C78116F2B491DC900E1D644 /* yt-downloader */,
 				4CC7B2042B3BFBAA0010A638 /* Brew */,
 			);
@@ -198,6 +216,9 @@
 			dependencies = (
 			);
 			name = Tooler;
+			packageProductDependencies = (
+				4CE011BF2B5122EF0084A391 /* SwiftElixir */,
+			);
 			productName = Tooler;
 			productReference = 4C2A642B2B3A9D6D008F310A /* Tooler.app */;
 			productType = "com.apple.product-type.application";
@@ -226,6 +247,9 @@
 				Base,
 			);
 			mainGroup = 4C2A64222B3A9D6D008F310A;
+			packageReferences = (
+				4CE011BC2B5120EB0084A391 /* XCLocalSwiftPackageReference "../SwiftElixir" */,
+			);
 			productRefGroup = 4C2A642C2B3A9D6D008F310A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -252,23 +276,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CAB28EB2B4C66A100BDC01E /* InstaDownloaderApp.swift in Sources */,
 				4C7811732B491DFD00E1D644 /* DownloadView.swift in Sources */,
 				4CC7B2012B3BE73E0010A638 /* ShellController.swift in Sources */,
 				4CD1DB762B467D6000487639 /* Constants.swift in Sources */,
 				4C2A64312B3A9D6D008F310A /* ContentView.swift in Sources */,
+				4CAB28ED2B4C676C00BDC01E /* InstaLoaderViewModel.swift in Sources */,
 				4CF0AC4E2B3C7B370024E8A4 /* BrewPackageList.swift in Sources */,
-				4C2A64432B3A9EDB008F310A /* DetailsView.swift in Sources */,
 				4CF0AC542B4055E20024E8A4 /* ColorConstants.swift in Sources */,
 				4C2A644C2B3AA41B008F310A /* NavigationStateManager.swift in Sources */,
 				4C2A64472B3AA370008F310A /* SettingsView.swift in Sources */,
+				4C7811772B49278600E1D644 /* YTDLApp.swift in Sources */,
 				4CC7B2082B3BFBDE0010A638 /* BrewManagerViewModel.swift in Sources */,
 				4C2A644A2B3AA3CD008F310A /* DataManager.swift in Sources */,
 				4CD1DB742B46772D00487639 /* BrewApp.swift in Sources */,
 				4CC7B2062B3BFBC90010A638 /* BrewManagerView.swift in Sources */,
+				4CAB28E82B4C31D000BDC01E /* ytDownloaderViewModel.swift in Sources */,
+				4CD164672B4D645500B12E31 /* FolderSelectionView.swift in Sources */,
+				4CAB28EF2B4C720800BDC01E /* InstaDownloaderView.swift in Sources */,
 				4CF0AC512B4055BF0024E8A4 /* UIColor+Ext.swift in Sources */,
-				4CF0AC562B4069A90024E8A4 /* MiddleView.swift in Sources */,
 				4C2A642F2B3A9D6D008F310A /* ToolerApp.swift in Sources */,
-				4C2A643E2B3A9EA1008F310A /* SidebarView.swift in Sources */,
 				4CD1DB722B45A06D00487639 /* ScratchPad.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,7 +491,7 @@
 				4C2A64392B3A9D6F008F310A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		4C2A643A2B3A9D6F008F310A /* Build configuration list for PBXNativeTarget "Tooler" */ = {
 			isa = XCConfigurationList;
@@ -473,9 +500,23 @@
 				4C2A643C2B3A9D6F008F310A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		4CE011BC2B5120EB0084A391 /* XCLocalSwiftPackageReference "../SwiftElixir" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../SwiftElixir;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4CE011BF2B5122EF0084A391 /* SwiftElixir */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftElixir;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4C2A64232B3A9D6D008F310A /* Project object */;
 }

@@ -14,7 +14,8 @@ protocol AppViewManager {
 
 protocol CommandLineApp: AppViewManager, Identifiable {
     var id: String { get }
-    var title: String { get set }
+    var title: String { get }
+    var baseCommand: String { get }
 }
 
 public struct ContentModel: Identifiable {
@@ -28,6 +29,6 @@ public struct ContentModel: Identifiable {
 }
 
 final class DataManager: ObservableObject {
-    let apps: [any CommandLineApp] = [BrewApp.shared]
+    let apps: [any CommandLineApp] = [BrewApp.shared, YTDLApp.shared, InstaDownloaderApp.shared]
 }
 

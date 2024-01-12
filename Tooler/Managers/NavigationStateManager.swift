@@ -18,10 +18,9 @@ class NavigationStateManager: ObservableObject {
     @Published var activeContentModel: ContentModel? = nil
     
     func updateSideBar(sectionName: String) {
-        if case let .Section(name) = selectedSideBarItem,
-           name != sectionName,
-           selectedContenItem != nil {
+        if case let .Section(name) = selectedSideBarItem, name != sectionName {
             selectedContenItem = nil
+            activeContentModel = nil
         }
         selectedSideBarItem = SelectionState.Section(sectionName)
     }
