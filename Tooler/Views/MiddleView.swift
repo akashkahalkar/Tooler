@@ -14,8 +14,8 @@ struct MiddleView: View {
     
     var body: some View {
         List(selection: $stateManager.selectedContenItem) {
-            if case let .Section(name) = stateManager.selectedSideBarItem {
-                Text(name).tag(SelectionState.Section(name))
+            if case let .section(name) = stateManager.selectedSideBarItem {
+                Text(name).tag(SelectionState.section(name))
                 
             } else {
                 Text("no state selected")

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 enum SelectionState: Hashable, Codable {
-    case Section(String)
+    case section(String)
 }
 
 class NavigationStateManager: ObservableObject {
@@ -18,18 +18,18 @@ class NavigationStateManager: ObservableObject {
     @Published var activeContentModel: ContentModel? = nil
     
     func updateSideBar(sectionName: String) {
-        if case let .Section(name) = selectedSideBarItem,
+        if case let .section(name) = selectedSideBarItem,
            name != sectionName,
            selectedContenItem != nil {
             selectedContenItem = nil
         }
-        selectedSideBarItem = SelectionState.Section(sectionName)
+        selectedSideBarItem = SelectionState.section(sectionName)
     }
     
     func updateContenList(contentModel: ContentModel) {
         DispatchQueue.main.async {
             self.activeContentModel = contentModel
-            self.selectedContenItem = SelectionState.Section(contentModel.title)
+            self.selectedContenItem = SelectionState.section(contentModel.title)
         }
     }
 }

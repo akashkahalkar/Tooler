@@ -19,7 +19,7 @@ struct SidebarView: View {
                 Section("Apps") {
                     ForEach(dataManager.apps, id: \.id) { app in
                         Text(app.title)
-                            .tag(SelectionState.Section(app.title))
+                            .tag(SelectionState.section(app.title))
                             .padding()
                     }
                 }

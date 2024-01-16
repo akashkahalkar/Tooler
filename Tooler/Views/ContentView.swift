@@ -22,7 +22,7 @@ struct ContentView: View {
             }
         } content: {
             switch stateManager.selectedSideBarItem {
-            case .Section(let sectionName):
+            case .section(let sectionName):
                 List(selection: $stateManager.selectedContenItem) {
                     if let contents = dataManager.apps.first(where: { $0.title == sectionName })?.getContentModels() {
                         ForEach(contents, id: \.id) {
@@ -37,7 +37,7 @@ struct ContentView: View {
             }
         } detail: {
             switch stateManager.selectedContenItem {
-            case .Section(_):
+            case .section(_):
                 if let detailView = stateManager.activeContentModel?.destination {
                     detailView
                 } else {
@@ -53,14 +53,14 @@ struct ContentView: View {
         .environmentObject(dataManager)
         .onAppear {
             if let app = dataManager.apps.first {
-                stateManager.selectedSideBarItem = SelectionState.Section(app.title)
+                stateManager.selectedSideBarItem = SelectionState.section(app.title)
             }
         }
     }
 
     private func getSideBarItemListView(_ sectionName: String) -> some View {
         return Text(sectionName)
-            .tag(SelectionState.Section(sectionName))
+            .tag(SelectionState.section(sectionName))
             .padding()
             .onTapGesture {
                 stateManager.updateSideBar(sectionName: sectionName)
@@ -74,7 +74,7 @@ struct ContentView: View {
             Text(contentModel.title)
                 .padding()
                 .frame(maxWidth: .infinity, alignment: .leading)
-        }.tag(SelectionState.Section(contentModel.title))
+        }.tag(SelectionState.section(contentModel.title))
     }
 }
 

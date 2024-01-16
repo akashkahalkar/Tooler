@@ -13,7 +13,7 @@ struct DetailsView: View {
     @EnvironmentObject var dataManager: DataManager
     
     var body: some View {
-        if case let .Section(name) = $stateManager.selectedContenItem.wrappedValue {
+        if case let .section(name) = $stateManager.selectedContenItem.wrappedValue {
             Text(name)
         } else {
             Text("EmptyView")
