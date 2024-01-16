@@ -8,7 +8,7 @@
 import Foundation
 
 enum BrewConstants {
-    enum commands {
+    enum Commands {
         static let install = "brew install"
         static let uninstall = "brew uninstall"
         static let list = "brew list"
