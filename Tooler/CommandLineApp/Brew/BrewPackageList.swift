@@ -8,19 +8,17 @@
 import SwiftUI
 
 struct BrewPackageList<T: BrewAppViewModelWrapperProtocol>: View {
-    
     @ObservedObject var viewModel: T
     @State private var uninstalling = false
-    
+
     private let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
         GridItem(.flexible()),
-        GridItem(.flexible())
+        GridItem(.flexible()),
     ]
-    
+
     var body: some View {
-        
         if viewModel.packages.isEmpty {
             ProgressView().onAppear {
                 Task {
@@ -30,7 +28,7 @@ struct BrewPackageList<T: BrewAppViewModelWrapperProtocol>: View {
         } else {
             NavigationStack {
                 VStack {
-                    if uninstalling { ProgressView() } else { listView } 
+                    if uninstalling { ProgressView() } else { listView }
                     Divider()
                     uninstallView
                     Spacer()
@@ -38,7 +36,7 @@ struct BrewPackageList<T: BrewAppViewModelWrapperProtocol>: View {
             }
         }
     }
-    
+
     var listView: some View {
         ScrollView {
             LazyVGrid(columns: columns, alignment: .leading, spacing: 16) {
@@ -51,11 +49,10 @@ struct BrewPackageList<T: BrewAppViewModelWrapperProtocol>: View {
             .padding(.horizontal)
         }.padding()
     }
-    
+
     var uninstallView: some View {
         HStack {
             if !viewModel.packages.filter({ $0.isSelected }).isEmpty || uninstalling {
-                
                 Button {
                     self.uninstalling = true
                     Task {

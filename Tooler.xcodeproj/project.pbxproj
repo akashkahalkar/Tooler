@@ -17,6 +17,7 @@
 		4C2A64472B3AA370008F310A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A64462B3AA370008F310A /* SettingsView.swift */; };
 		4C2A644A2B3AA3CD008F310A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A64492B3AA3CD008F310A /* DataManager.swift */; };
 		4C2A644C2B3AA41B008F310A /* NavigationStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A644B2B3AA41B008F310A /* NavigationStateManager.swift */; };
+		4C8363752B5667D400A3A661 /* SwiftElixir in Frameworks */ = {isa = PBXBuildFile; productRef = 4CE011BF2B5122EF0084A391 /* SwiftElixir */; };
 		4CC7B2012B3BE73E0010A638 /* ShellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7B2002B3BE73E0010A638 /* ShellController.swift */; };
 		4CC7B2062B3BFBC90010A638 /* BrewManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7B2052B3BFBC90010A638 /* BrewManagerView.swift */; };
 		4CC7B2082B3BFBDE0010A638 /* BrewManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7B2072B3BFBDE0010A638 /* BrewManagerViewModel.swift */; };
@@ -58,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CE011C02B5122EF0084A391 /* SwiftElixir in Frameworks */,
+				4C8363752B5667D400A3A661 /* SwiftElixir in Frameworks */,
 				4C21E4032B5149D600A51286 /* SwiftElixir in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,7 +184,7 @@
 				4C2A64272B3A9D6D008F310A /* Sources */,
 				4C2A64282B3A9D6D008F310A /* Frameworks */,
 				4C2A64292B3A9D6D008F310A /* Resources */,
-				4C03B6342B5657DE006ED3ED /* Swift Lint */,
+				4C8363762B5669D500A3A661 /* swiftFormat */,
 			);
 			buildRules = (
 			);
@@ -247,7 +248,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4C03B6342B5657DE006ED3ED /* Swift Lint */ = {
+		4C8363762B5669D500A3A661 /* swiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,14 +257,14 @@
 			);
 			inputPaths = (
 			);
-			name = "Swift Lint";
+			name = swiftFormat;
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -495,6 +496,7 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		4C21E4012B5149D600A51286 /* XCRemoteSwiftPackageReference "SwiftElixir" */ = {
 			isa = XCRemoteSwiftPackageReference;

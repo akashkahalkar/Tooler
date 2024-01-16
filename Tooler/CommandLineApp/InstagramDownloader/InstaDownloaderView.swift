@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct InstaDownloaderView: View {
-    
     private var viewModel: InstaLoaderViewModel
     @State private var profileId: String = ""
     @State private var skipPictures = false
@@ -18,11 +17,11 @@ struct InstaDownloaderView: View {
     @State private var liveOutput = ""
     private let totalUpdates = 10
     private let updateInterval = 2.0
-    
+
     public init(viewModel: InstaLoaderViewModel) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         VStack {
             Form {
@@ -39,11 +38,12 @@ struct InstaDownloaderView: View {
                         Text("Skip Videos")
                     }
                 }.padding()
-                
+
                 FolderSelectionView(
                     destinationPath: $destinationPath,
-                    appId: InstaDownloaderApp.shared.title)
-                
+                    appId: InstaDownloaderApp.shared.title
+                )
+
                 HStack {
                     Button(action: download) {
                         Text("Download").padding()
@@ -51,25 +51,26 @@ struct InstaDownloaderView: View {
                     if isDownloading { ProgressView() }
                 }.padding()
             }.padding()
-            
+
             Text("Output: ")
             Text(liveOutput).padding().background(Color.gray.opacity(0.5))
         }
     }
-    
+
     private func download() {
         isDownloading = true
         viewModel.downloadWithOutput(profileId: profileId,
                                      skipPictures: skipPictures,
                                      skipVideos: skipVideos,
-                                     destinationPath: destinationPath) { opt in
+                                     destinationPath: destinationPath)
+        { opt in
             withAnimation {
-                liveOutput+=opt + "\n"
+                liveOutput += opt + "\n"
             }
-        } compltion: { status in
+        } compltion: { _ in
             isDownloading = false
         }
-        
+
 //        isDownloading = true
 //        Task {
 //            let _ = await viewModel.downloadAll(

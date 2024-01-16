@@ -8,16 +8,15 @@
 import SwiftUI
 
 struct BrewManagerView<T: BrewAppViewModelWrapperProtocol>: View {
-    
     private var viewModel: T
     @State private var packageName = ""
     @State private var isInstalling = false
     @State private var error: String = ""
-    
+
     public init(viewModel: T) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         NavigationStack {
             Section("Install Package") {
@@ -25,18 +24,17 @@ struct BrewManagerView<T: BrewAppViewModelWrapperProtocol>: View {
                     HStack {
                         TextField("Enter package name",
                                   text: $packageName,
-                                  prompt: Text("Package Name here. e.g. wwdc")
-                        ).padding()
-                        .textFieldStyle(.plain)
-                        .frame(maxWidth: 500)
-                        
+                                  prompt: Text("Package Name here. e.g. wwdc")).padding()
+                            .textFieldStyle(.plain)
+                            .frame(maxWidth: 500)
+
                         Button(action: installPackage) {
                             Text("Install")
                                 .foregroundColor(Color.pink).padding()
                         }
-                            .background(Color.sweetVenom)
-                            .disabled(packageName.isEmpty)
-                            .clipped().cornerRadius(8).padding(.horizontal)
+                        .background(Color.sweetVenom)
+                        .disabled(packageName.isEmpty)
+                        .clipped().cornerRadius(8).padding(.horizontal)
                         // show progress view while installing
                         if isInstalling { ProgressView() }
                     }
@@ -49,7 +47,7 @@ struct BrewManagerView<T: BrewAppViewModelWrapperProtocol>: View {
             .navigationTitle("Package Manager")
         }
     }
-    
+
     func installPackage() {
         isInstalling = true
         Task {
@@ -64,7 +62,6 @@ struct BrewManagerView<T: BrewAppViewModelWrapperProtocol>: View {
                 } else {
                     error = "Failed to install package"
                 }
-                
             }
         }
     }

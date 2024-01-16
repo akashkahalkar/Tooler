@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct DetailsView: View {
-    
     @EnvironmentObject var stateManager: NavigationStateManager
     @EnvironmentObject var dataManager: DataManager
-    
+
     var body: some View {
         if case let .section(name) = $stateManager.selectedContenItem.wrappedValue {
             Text(name)

@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct SidebarView: View {
-    
     @EnvironmentObject var stateManager: NavigationStateManager
     @EnvironmentObject var dataManager: DataManager
-    
+
     var body: some View {
         ZStack {
             Color.sacroBosco

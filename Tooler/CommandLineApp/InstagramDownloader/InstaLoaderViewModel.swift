@@ -9,9 +9,8 @@ import Foundation
 import SwiftUI
 
 final class InstaLoaderViewModel {
-    
     private var shellController: ShellProvider
-    
+
     init(shellController: ShellProvider) {
         self.shellController = shellController
     }
@@ -22,36 +21,36 @@ extension InstaLoaderViewModel {
         profileId: String,
         skipPictures: Bool,
         skipVideos: Bool,
-        destinationPath: String) async -> Bool {
-            
-            let command = "instaloader"
-            let parameters = "--no-caption --no-compress-json --no-profile-pic  --no-video-thumbnails --no-metadata-json"
-            let skipVideosParam = skipVideos ? "--no-videos" : ""
-            let skipPicturesParam = skipPictures ? "--no-pictures" : ""
-            let destinationFolder = "--dirname-pattern \(destinationPath){profile}"
-            let finalCommand = [command, parameters, skipVideosParam, skipPicturesParam, destinationFolder, profileId].filter { !$0.isEmpty }.joined(separator: " ")
-            let result = await shellController.safeShell(finalCommand, liveOutput: nil)
-            return result.status == 0
+        destinationPath: String
+    ) async -> Bool {
+        let command = "instaloader"
+        let parameters = "--no-caption --no-compress-json --no-profile-pic  --no-video-thumbnails --no-metadata-json"
+        let skipVideosParam = skipVideos ? "--no-videos" : ""
+        let skipPicturesParam = skipPictures ? "--no-pictures" : ""
+        let destinationFolder = "--dirname-pattern \(destinationPath){profile}"
+        let finalCommand = [command, parameters, skipVideosParam, skipPicturesParam, destinationFolder, profileId].filter { !$0.isEmpty }.joined(separator: " ")
+        let result = await shellController.safeShell(finalCommand, liveOutput: nil)
+        return result.status == 0
     }
-    
+
     func downloadWithOutput(profileId: String,
                             skipPictures: Bool,
                             skipVideos: Bool,
                             destinationPath: String,
                             debug: ((String) -> Void)?,
-                            compltion: @escaping (Bool)->Void) {
-        
+                            compltion: @escaping (Bool) -> Void)
+    {
         let command = "instaloader"
         let parameters = "--no-caption --no-compress-json --no-profile-pic  --no-video-thumbnails --no-metadata-json"
         let skipVideosParam = skipVideos ? "--no-videos" : ""
         let skipPicturesParam = skipPictures ? "--no-pictures" : ""
         let destinationFolder = "--dirname-pattern \(destinationPath){profile}"
         let finalCommand = [command, parameters, skipVideosParam, skipPicturesParam, destinationFolder, profileId].filter { $0.isNotEmpty }.joined(separator: " ")
-        
+
         shellController.executeShell(command: finalCommand, liveOutput: { opt in
             print(opt, Date().description)
             debug?(opt)
-        }) { output, result in
+        }) { _, result in
             compltion(result == 0)
         }
     }

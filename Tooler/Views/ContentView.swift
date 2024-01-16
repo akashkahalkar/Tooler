@@ -8,12 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    
     @StateObject var stateManager = NavigationStateManager()
     @StateObject var dataManager = DataManager()
-    
+
     var body: some View {
-        
         NavigationSplitView {
             List(selection: $stateManager.selectedSideBarItem) {
                 ForEach(dataManager.apps, id: \.id) { app in
@@ -22,7 +20,7 @@ struct ContentView: View {
             }
         } content: {
             switch stateManager.selectedSideBarItem {
-            case .section(let sectionName):
+            case let .section(sectionName):
                 List(selection: $stateManager.selectedContenItem) {
                     if let contents = dataManager.apps.first(where: { $0.title == sectionName })?.getContentModels() {
                         ForEach(contents, id: \.id) {
@@ -37,7 +35,7 @@ struct ContentView: View {
             }
         } detail: {
             switch stateManager.selectedContenItem {
-            case .section(_):
+            case .section:
                 if let detailView = stateManager.activeContentModel?.destination {
                     detailView
                 } else {
@@ -46,7 +44,7 @@ struct ContentView: View {
             case nil:
                 Text("NO item selected")
             }
-            //DetailsView()
+            // DetailsView()
         }
         .background(Color.plumCheese)
         .environmentObject(stateManager)
@@ -66,7 +64,7 @@ struct ContentView: View {
                 stateManager.updateSideBar(sectionName: sectionName)
             }
     }
-    
+
     private func getContentItemListView(contentModel: ContentModel) -> some View {
         return Button {
             stateManager.updateContenList(contentModel: contentModel)
@@ -81,4 +79,3 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
-
