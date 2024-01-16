@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swiftelixir",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/akashkahalkar/SwiftElixir.git",
+      "state" : {
+        "revision" : "231bcfc0184d47cffc1074180d5ffd1baf41974d",
+        "version" : "0.0.3"
+      }
+    }
+  ],
+  "version" : 2
+}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C21E4032B5149D600A51286 /* SwiftElixir in Frameworks */ = {isa = PBXBuildFile; productRef = 4C21E4022B5149D600A51286 /* SwiftElixir */; };
 		4C2A642F2B3A9D6D008F310A /* ToolerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A642E2B3A9D6D008F310A /* ToolerApp.swift */; };
 		4C2A64312B3A9D6D008F310A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A64302B3A9D6D008F310A /* ContentView.swift */; };
 		4C2A64332B3A9D6F008F310A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C2A64322B3A9D6F008F310A /* Assets.xcassets */; };
@@ -57,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CE011C02B5122EF0084A391 /* SwiftElixir in Frameworks */,
+				4C21E4032B5149D600A51286 /* SwiftElixir in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,12 +183,17 @@
 				4C2A64272B3A9D6D008F310A /* Sources */,
 				4C2A64282B3A9D6D008F310A /* Frameworks */,
 				4C2A64292B3A9D6D008F310A /* Resources */,
+				4C03B6342B5657DE006ED3ED /* Swift Lint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Tooler;
+			packageProductDependencies = (
+				4CE011BF2B5122EF0084A391 /* SwiftElixir */,
+				4C21E4022B5149D600A51286 /* SwiftElixir */,
+			);
 			productName = Tooler;
 			productReference = 4C2A642B2B3A9D6D008F310A /* Tooler.app */;
 			productType = "com.apple.product-type.application";
@@ -214,6 +222,9 @@
 				Base,
 			);
 			mainGroup = 4C2A64222B3A9D6D008F310A;
+			packageReferences = (
+				4C21E4012B5149D600A51286 /* XCRemoteSwiftPackageReference "SwiftElixir" */,
+			);
 			productRefGroup = 4C2A642C2B3A9D6D008F310A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -234,6 +245,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C03B6342B5657DE006ED3ED /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4C2A64272B3A9D6D008F310A /* Sources */ = {
@@ -300,7 +332,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -363,7 +395,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -463,6 +495,28 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+/* Begin XCRemoteSwiftPackageReference section */
+		4C21E4012B5149D600A51286 /* XCRemoteSwiftPackageReference "SwiftElixir" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/akashkahalkar/SwiftElixir.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4C21E4022B5149D600A51286 /* SwiftElixir */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C21E4012B5149D600A51286 /* XCRemoteSwiftPackageReference "SwiftElixir" */;
+			productName = SwiftElixir;
+		};
+		4CE011BF2B5122EF0084A391 /* SwiftElixir */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftElixir;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4C2A64232B3A9D6D008F310A /* Project object */;
 }
