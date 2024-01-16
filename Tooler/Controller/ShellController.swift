@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import Extensions
+import NetworkUtilities
 
 protocol ShellProvider {
-    func safeShell(_ command: String, outputHandle: FileHandle?) async -> (output: String?, status: Int32)
+    func safeShell(_ command: String) async -> (output: String?, status: Int32)
 }
 
 final class DefaultShellController: ObservableObject, ShellProvider {
@@ -16,9 +18,14 @@ final class DefaultShellController: ObservableObject, ShellProvider {
         case decodingError
     }
     
-    func safeShell(_ command: String, outputHandle: FileHandle? = nil) async -> (output: String?, status: Int32) {
+    func checkIfPresent(command: String) async -> Bool {
+        let result = await safeShell("command -v \(command)").status
+        return result == 0
+    }
+    
+    func safeShell(_ command: String) async -> (output: String?, status: Int32) {
         
-        await withCheckedContinuation { continuation in
+        return await withCheckedContinuation { continuation in
             let process = Process()
             let outputPipe = Pipe()
             process.standardOutput = outputPipe
@@ -44,7 +51,6 @@ final class DefaultShellController: ObservableObject, ShellProvider {
                 continuation.resume(returning: (output: nil, status: 1))
             }
         }
-        
     }
 }
 

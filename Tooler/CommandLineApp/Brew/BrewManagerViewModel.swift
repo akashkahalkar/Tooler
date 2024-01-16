@@ -54,7 +54,7 @@ final class BrewManagerViewModel: ObservableObject, BrewAppViewModelWrapperProto
     
     func loadInstalledPackages(forceRefresh: Bool = false) async {
         if packages.isEmpty || forceRefresh {
-            let result = await shellController.safeShell(BrewConstants.commands.list, outputHandle: nil)
+            let result = await shellController.safeShell(BrewConstants.Commands.list)
             guard getStatus(result.status),
                   let packagesList = result.output?.components(separatedBy: .newlines) else {
                 return
@@ -73,7 +73,7 @@ extension BrewManagerViewModel {
     }
     
     func installPackage(_ name: String) async -> (output: String?, success: Bool) {
-        let result = await shellController.safeShell("brew install \(name)", outputHandle: nil)
+        let result = await shellController.safeShell("brew install \(name)")
         if getStatus(result.status) {
             await loadInstalledPackages(forceRefresh: true)
         }
@@ -93,7 +93,7 @@ extension BrewManagerViewModel {
     func uninstallSelectedPackages() async -> Bool {
         let packagesToUninstall = self.packages.filter { $0.isSelected }.map { $0.name }
         let spaceSeperatedPackageNames = packagesToUninstall.joined(separator: " ")
-        let result = await shellController.safeShell("brew uninstall \(spaceSeperatedPackageNames)", outputHandle: nil)
+        let result = await shellController.safeShell("brew uninstall \(spaceSeperatedPackageNames)")
        
         if getStatus(result.status) {
             removeUninstalledPackages(packagesToUninstall)
