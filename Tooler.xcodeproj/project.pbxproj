@@ -23,7 +23,7 @@
 		4CC7B2082B3BFBDE0010A638 /* BrewManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7B2072B3BFBDE0010A638 /* BrewManagerViewModel.swift */; };
 		4CD1DB722B45A06D00487639 /* ScratchPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD1DB712B45A06C00487639 /* ScratchPad.swift */; };
 		4CD1DB742B46772D00487639 /* BrewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD1DB732B46772D00487639 /* BrewApp.swift */; };
-		4CD1DB762B467D6000487639 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD1DB752B467D6000487639 /* Constants.swift */; };
+		4CD1DB762B467D6000487639 /* BrewConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD1DB752B467D6000487639 /* BrewConstant.swift */; };
 		4CF0AC4E2B3C7B370024E8A4 /* BrewPackageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF0AC4D2B3C7B370024E8A4 /* BrewPackageList.swift */; };
 		4CF0AC512B4055BF0024E8A4 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF0AC502B4055BF0024E8A4 /* UIColor+Ext.swift */; };
 		4CF0AC542B4055E20024E8A4 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF0AC532B4055E20024E8A4 /* ColorConstants.swift */; };
@@ -47,7 +47,7 @@
 		4CC7B2072B3BFBDE0010A638 /* BrewManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewManagerViewModel.swift; sourceTree = "<group>"; };
 		4CD1DB712B45A06C00487639 /* ScratchPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchPad.swift; sourceTree = "<group>"; };
 		4CD1DB732B46772D00487639 /* BrewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewApp.swift; sourceTree = "<group>"; };
-		4CD1DB752B467D6000487639 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4CD1DB752B467D6000487639 /* BrewConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewConstant.swift; sourceTree = "<group>"; };
 		4CF0AC4D2B3C7B370024E8A4 /* BrewPackageList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewPackageList.swift; sourceTree = "<group>"; };
 		4CF0AC502B4055BF0024E8A4 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		4CF0AC532B4055E20024E8A4 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
@@ -67,6 +67,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C286E9F2B5AB21C00969EEF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4CC7B2052B3BFBC90010A638 /* BrewManagerView.swift */,
+				4CF0AC4D2B3C7B370024E8A4 /* BrewPackageList.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4C286EA02B5AB23200969EEF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4CC7B2072B3BFBDE0010A638 /* BrewManagerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		4C2A64222B3A9D6D008F310A = {
 			isa = PBXGroup;
 			children = (
@@ -149,11 +166,9 @@
 		4CC7B2042B3BFBAA0010A638 /* Brew */ = {
 			isa = PBXGroup;
 			children = (
-				4CC7B2052B3BFBC90010A638 /* BrewManagerView.swift */,
-				4CC7B2072B3BFBDE0010A638 /* BrewManagerViewModel.swift */,
-				4CF0AC4D2B3C7B370024E8A4 /* BrewPackageList.swift */,
+				4C286EA02B5AB23200969EEF /* ViewModel */,
+				4C286E9F2B5AB21C00969EEF /* Views */,
 				4CD1DB732B46772D00487639 /* BrewApp.swift */,
-				4CD1DB752B467D6000487639 /* Constants.swift */,
 			);
 			path = Brew;
 			sourceTree = "<group>";
@@ -170,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				4CF0AC532B4055E20024E8A4 /* ColorConstants.swift */,
+				4CD1DB752B467D6000487639 /* BrewConstant.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -274,7 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CC7B2012B3BE73E0010A638 /* ShellController.swift in Sources */,
-				4CD1DB762B467D6000487639 /* Constants.swift in Sources */,
+				4CD1DB762B467D6000487639 /* BrewConstant.swift in Sources */,
 				4C2A64312B3A9D6D008F310A /* ContentView.swift in Sources */,
 				4CF0AC4E2B3C7B370024E8A4 /* BrewPackageList.swift in Sources */,
 				4C2A64432B3A9EDB008F310A /* DetailsView.swift in Sources */,
